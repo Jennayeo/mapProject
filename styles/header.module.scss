@@ -22,9 +22,9 @@
 
 .box {
   padding: 6px;
-  border-radius: 4px;
   border: none;
-  box-shadow: 0 2px 4px 0 rgba(136 136 136 / 30%);
+  border-radius: 4px;
+  box-shadow: 0 2px 4px 0 rgb(136 136 136 / 30%);
 
   display: flex;
   align-items: center;
@@ -35,6 +35,5 @@
     background-color: #40a6fd;
     color: white;
   }
-
   transition: background-color 200ms ease;
 }
