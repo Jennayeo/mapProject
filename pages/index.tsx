@@ -8,17 +8,34 @@ import styles from "../styles/header.module.scss";
 import MapSection from "../components/home/MapSection";
 import { Court } from "../types/court";
 import useCourts from "../hooks/useCourts";
+import DetailSection from "../components/home/DetailSection";
 
 interface Props {
   courts: Court[];
+  // result: {};
 }
 
-const Home: NextPage<Props> = ({ courts }) => {
+// export const API_URL = "http://openapi.seoul.go.kr:8088";
+// export const API_KEY = "57445967616a656e39345453564973";
+
+const Home: NextPage<Props> = ({ courts, result }) => {
   const { initializeCourts } = useCourts();
 
   useEffect(() => {
-    initializeCourts(courts);
+    // const url = `http://openapi.seoul.go.kr:8088/57445967616a656e39345453564973/json/ListPublicReservationSport/1/5/`;
+    // // const url = `${API_URL}?serviceKey=${API_KEY}&pageNo=1&numOfRows=10&resultType=json `;
+    // fetch(url)
+    //   .then((response) =>
+    //     console.log("response:", response)
+    //   )
+    //   .catch((error) => console.log("error:", error));
+    // initializeCourts(courts);
+    initializeCourts(result.ListPublicReservationSport.row);
   }, [initializeCourts, courts]);
+
+  useEffect(() => {
+    console.log(result.ListPublicReservationSport.row);
+  }, [result]);
 
   return (
     <Fragment>
@@ -39,8 +56,16 @@ const Home: NextPage<Props> = ({ courts }) => {
           </Link>,
         ]}
       />
-      <main style={{ width: "100%", height: "100%" }}>
+      <main
+        style={{
+          width: "100%",
+          height: "100%",
+          position: "relative",
+          overflow: "hidden",
+        }}
+      >
         <MapSection />
+        <DetailSection />
       </main>
     </Fragment>
   );
@@ -51,8 +76,20 @@ export async function getStaticProps() {
   /** TODO: next api routes로 불러오기 */
   const courts = (await import("../public/courts.json")).default;
 
+  // 데이터가 다 받아질때까지 기다림
+  const res = await fetch(
+    `http://openapi.seoul.go.kr:8088/57445967616a656e39345453564973/json/ListPublicReservationSport/1/999/테니스장`,
+    { method: "get" }
+  );
+  const result = await res.json();
+  // await setLoading(false);
+
+  // const projectIds = result.results.map((aProject) => (
+  //     aProject.properties.이름.title[0].plain_text
+  // ))
+
   return {
-    props: { courts },
+    props: { courts, result },
     revalidate: 60 * 60,
   };
 }

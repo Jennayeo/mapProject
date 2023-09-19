@@ -10,8 +10,8 @@ export type Marker = {
 };
 
 export type ImageIcon = {
-  url: string;
-  size: naver.maps.Size;
-  origin: naver.maps.Point;
-  scaledSize?: naver.maps.Size;
+  //   url: string;
+  //   size: naver.maps.Size;
+  //   origin: naver.maps.Point;
+  //   scaledSize?: naver.maps.Size;
 };

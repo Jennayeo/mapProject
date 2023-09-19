@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import type { Marker } from "../../types/map";
+import markerIcon from "../../public/images/tennis.png";
 
 const Marker = ({ map, coordinates, icon, onClick }: Marker): null => {
   useEffect(() => {

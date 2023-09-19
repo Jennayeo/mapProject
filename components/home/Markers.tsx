@@ -17,26 +17,33 @@ const Markers = () => {
   const { setCurrentCourt, clearCurrentCourt } = useCurrentCourt();
 
   if (!map || !courts) return null;
+  // useEffect(() => {
+  //   console.log(courts[0].X);
+  // }, []);
+
   return (
     <>
       {courts.map((court) => {
+        // console.log([parseFloat(court.X), court.Y]);
         return (
           <Marker
             map={map}
-            coordinates={court.coordinates}
+            // coordinates={court.coordinates}
+            coordinates={[parseFloat(court.Y), parseFloat(court.X)]}
             // icon={generateCourtMarkerIcon(court.season, false)}
             onClick={() => {
               setCurrentCourt(court);
             }}
-            key={court.nid}
+            // key={court.nid}
           />
         );
       })}
       {currentCourt && (
         <Marker
           map={map}
-          coordinates={currentCourt.coordinates}
-          icon={generateCourtMarkerIcon(currentCourt.season, true)}
+          coordinates={[parseFloat(currentCourt.Y), parseFloat(currentCourt.X)]}
+          //   coordinates={}
+          //   icon={generateCourtMarkerIcon(currentCourt.season, true)}
           onClick={clearCurrentCourt}
           key={currentCourt.nid}
         />
