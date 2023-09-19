@@ -16,10 +16,6 @@ const Markers = () => {
   const { data: currentCourt } = useSWR<Court>(CURRENT_COURT_KEY);
   const { setCurrentCourt, clearCurrentCourt } = useCurrentCourt();
 
-  useEffect(() => {
-    console.log("courts", courts);
-  }, [courts]);
-
   if (!map || !courts) return null;
   return (
     <>
