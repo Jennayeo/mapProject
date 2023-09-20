@@ -1,6 +1,6 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 📱 UI > [weShareTennis!](https://https://wesharetennis.vercel.app/)
+## 📱 UI [weShareTennis!](https://https://wesharetennis.vercel.app/)
 
 <table cellpadding="0">
   <tr style="padding: 0; border: 'none';">
