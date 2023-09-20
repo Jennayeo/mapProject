@@ -30,11 +30,15 @@ const Markers = () => {
             map={map}
             // coordinates={court.coordinates}
             coordinates={[parseFloat(court.Y), parseFloat(court.X)]}
-            // icon={generateCourtMarkerIcon(court.season, false)}
+            icon={generateCourtMarkerIcon(
+              court.SVCSTATNM == "예약마감" ? 0 : 2,
+              false
+            )}
             onClick={() => {
+              console.log(court);
               setCurrentCourt(court);
             }}
-            // key={court.nid}
+            key={court.SVCID}
           />
         );
       })}
@@ -43,7 +47,7 @@ const Markers = () => {
           map={map}
           coordinates={[parseFloat(currentCourt.Y), parseFloat(currentCourt.X)]}
           //   coordinates={}
-          //   icon={generateCourtMarkerIcon(currentCourt.season, true)}
+          icon={generateCourtMarkerIcon(1, true)}
           onClick={clearCurrentCourt}
           key={currentCourt.nid}
         />
@@ -55,7 +59,7 @@ export default Markers;
 
 const MARKER_HEIGHT = 64;
 const MARKER_WIDTH = 54;
-const NUMBER_OF_MARKER = 13;
+const NUMBER_OF_MARKER = 3;
 const SCALE = 2 / 3;
 
 const SCALED_MARKER_WIDTH = MARKER_WIDTH * SCALE;
@@ -67,11 +71,11 @@ export function generateCourtMarkerIcon(
 ): ImageIcon {
   /** https://navermaps.github.io/maps.js.ncp/docs/tutorial-8-marker-retina-sprite.example.html */
   return {
-    url: isSelected ? "images/markers-selected.png" : "images/markers.png",
+    url: isSelected ? "images/tennis.png" : "images/tennis_sprite.png",
     size: new naver.maps.Size(SCALED_MARKER_WIDTH, SCALED_MARKER_HEIGHT),
     origin: new naver.maps.Point(SCALED_MARKER_WIDTH * markerIndex, 0),
     scaledSize: new naver.maps.Size(
-      SCALED_MARKER_WIDTH * NUMBER_OF_MARKER,
+      SCALED_MARKER_WIDTH * (isSelected ? 1 : NUMBER_OF_MARKER),
       SCALED_MARKER_HEIGHT
     ),
   };

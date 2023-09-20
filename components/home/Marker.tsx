@@ -10,7 +10,7 @@ const Marker = ({ map, coordinates, icon, onClick }: Marker): null => {
       marker = new naver.maps.Marker({
         map: map,
         position: new naver.maps.LatLng(...coordinates),
-        // icon,
+        icon,
       });
     }
 

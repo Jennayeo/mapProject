@@ -1,7 +1,11 @@
 import Image from "next/image";
 import type { Court } from "../../types/court";
 // import Naver from "public/images/naver.png";
-import { IoCallOutline, IoLocationOutline } from "react-icons/io5";
+import {
+  IoCallOutline,
+  IoLocationOutline,
+  IoHomeOutline,
+} from "react-icons/io5";
 import styles from "../../styles/detail.module.scss";
 
 type Props = {
@@ -35,34 +39,38 @@ const DetailContent = ({ currentCourt, openModal }: Props) => {
       {openModal && (
         <>
           <div className={styles.description}>
-            <h2>설명</h2>
-            <p>{currentCourt.description}</p>
+            <h2>예약 가능 여부</h2>
+            <p>{currentCourt.SVCSTATNM}</p>
           </div>
           <hr />
           <div className={styles.basicInfo}>
             <h2>기본 정보</h2>
             <div className="address">
               <IoLocationOutline size={20} />
-              <span>{currentCourt.address || "정보가 없습니다."}</span>
+              <span>
+                {currentCourt.V_MIN + "-" + currentCourt.V_MAX ||
+                  "정보가 없습니다."}
+              </span>
             </div>
             <div className="phone">
               <IoCallOutline size={20} />
-              <span>{currentCourt.phone || "정보가 없습니다."}</span>
+              <span>{currentCourt.TELNO || "정보가 없습니다."}</span>
             </div>
             <div className="naverUrl">
               {/* <Image src={Naver} width={20} height={20} alt="" /> */}
+              <IoHomeOutline size={20} />
               <a
-                href={`https://pcmap.place.naver.com/restaurant/${currentCourt.nid}/home`}
+                href={currentCourt.SVCURL}
                 target="_blank"
                 rel="noreferrer noopener"
               >
-                <span>네이버 상세 정보</span>
+                <span>예약 바로가기</span>
               </a>
             </div>
           </div>
           <hr />
           <div className={styles.menus}>
-            <h2>메뉴</h2>
+            {/* <h2>메뉴</h2>
             <ul>
               {currentCourt.menus?.map((menu) => (
                 <li className={styles.menu} key={menu.name}>
@@ -70,7 +78,7 @@ const DetailContent = ({ currentCourt, openModal }: Props) => {
                   <span className={styles.price}>{menu.price}</span>
                 </li>
               ))}
-            </ul>
+            </ul> */}
           </div>
         </>
       )}

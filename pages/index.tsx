@@ -6,13 +6,13 @@ import { AiOutlineShareAlt } from "react-icons/ai";
 import Header from "../components/common/Header";
 import styles from "../styles/header.module.scss";
 import MapSection from "../components/home/MapSection";
-import { Court } from "../types/court";
+import { Court, Result } from "../types/court";
 import useCourts from "../hooks/useCourts";
 import DetailSection from "../components/home/DetailSection";
 
 interface Props {
   courts: Court[];
-  // result: {};
+  result: any;
 }
 
 // export const API_URL = "http://openapi.seoul.go.kr:8088";
@@ -33,28 +33,26 @@ const Home: NextPage<Props> = ({ courts, result }) => {
     initializeCourts(result.ListPublicReservationSport.row);
   }, [initializeCourts, courts]);
 
-  useEffect(() => {
-    console.log(result.ListPublicReservationSport.row);
-  }, [result]);
-
   return (
     <Fragment>
       <Header
-        rightElements={[
-          // <button
-          //   onClick={() => {
-          //     alert("복사!");
-          //   }}
-          //   className={styles.box}
-          //   style={{ marginRight: 8 }}
-          //   key="button"
-          // >
-          //   <AiOutlineShareAlt size={20} />
-          // </button>,
-          <Link href="/feedback" className={styles.box} key="link">
-            <VscAccount size={30} />
-          </Link>,
-        ]}
+        rightElements={
+          [
+            // <button
+            //   onClick={() => {
+            //     alert("복사!");
+            //   }}
+            //   className={styles.box}
+            //   style={{ marginRight: 8 }}
+            //   key="button"
+            // >
+            //   <AiOutlineShareAlt size={20} />
+            // </button>,
+            // <Link href="/feedback" className={styles.box} key="link">
+            //   <VscAccount size={30} />
+            // </Link>,
+          ]
+        }
       />
       <main
         style={{
