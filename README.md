@@ -1,15 +1,13 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 📱 UI
+## 📱 UI > [weShareTennis!](https://https://wesharetennis.vercel.app/)
 
 <table cellpadding="0">
-  <tr style="padding: 0; border: none;">
+  <tr style="padding: 0; border: 'none';">
     <td valign="top"><img src="./public/images/screen.png" height="600"/></td>
     <td valign="top"><img src="./public/images/screenDetail.png" height="600"/></td>
   </tr>
 </table>
-
-> [weShareTennis!](https://https://wesharetennis.vercel.app/)
 
 ## 🛠️ Tech Stack
 
