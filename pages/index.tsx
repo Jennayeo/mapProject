@@ -9,7 +9,7 @@ import MapSection from "../components/home/MapSection";
 import { Court, Result } from "../types/court";
 import useCourts from "../hooks/useCourts";
 import DetailSection from "../components/home/DetailSection";
-
+import { NextSeo } from "next-seo";
 interface Props {
   courts: Court[];
   result: any;
@@ -35,6 +35,10 @@ const Home: NextPage<Props> = ({ courts, result }) => {
 
   return (
     <Fragment>
+      <NextSeo
+        title="위쉐어! 테니스 코트 찾기"
+        description="코트 잡기 하늘의 별따기"
+      />
       <Header
         rightElements={
           [
