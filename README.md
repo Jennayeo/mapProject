@@ -2,14 +2,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## 📱 UI
 
-<div style={{display:flex}} >
-    <img src="./public/images/screen.png"/>
-    <img src="./public/images/screenDetail.png"/>
-</div>
+<table cellpadding="0">
+  <tr style="padding: 0">
+    <td valign="top"><img src="./public/images/screen.png" height="200"/></td>
+    <td valign="top"><img src="./public/images/screenDetail.png" height="200"/></td>
+  </tr>
+</table>
 
 ## 🛠️ Tech Stack
 
-```
 - [x] Framework Next.js
 - [x] Language Typescript
 - [x] Style SCSS
@@ -18,4 +19,3 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 - [x] Performance Check Lighthouse
 - [x] Deploy Vercel
 - [x] VCS git
-```
