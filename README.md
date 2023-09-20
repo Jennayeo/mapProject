@@ -2,7 +2,10 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## 📱 UI
 
-<img src="./public/images/screen.png"/>
+<div style={{display:flex}} >
+    <img src="./public/images/screen.png"/>
+    <img src="./public/images/screen2.png"/>
+</div>
 
 ## 🛠️ Tech Stack
 
