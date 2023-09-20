@@ -10,6 +10,7 @@ import { Court, Result } from "../types/court";
 import useCourts from "../hooks/useCourts";
 import DetailSection from "../components/home/DetailSection";
 import { NextSeo } from "next-seo";
+
 interface Props {
   courts: Court[];
   result: any;
