@@ -8,7 +8,8 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
     <td valign="top"><img src="./public/images/screenDetail.png" height="600"/></td>
   </tr>
 </table>
-> [smkoak.github.io](https://https://wesharetennis.vercel.app/)
+
+> [weShareTennis!](https://https://wesharetennis.vercel.app/)
 
 ## 🛠️ Tech Stack
 
