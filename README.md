@@ -1,4 +1,4 @@
-## 📱 UI [weShareTennis!](https://https://wesharetennis.vercel.app/)
+## 📱 UI [weShareTennis!](https://wesharetennis.vercel.app/)
 
 <table cellpadding="0">
   <tr style="padding: 0; border: 'none';">
