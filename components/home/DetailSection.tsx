@@ -22,6 +22,7 @@ const DetailSection = () => {
           className={`${styles.arrowButton} ${openModal ? styles.opened : ""}`}
           onClick={() => setOpenModal(!openModal)}
           disabled={!currentCourt}
+          aria-label={openModal ? "코트 정보 닫기" : "코트 정보 열기"}
         >
           <IoIosArrowUp size={20} color="#666666" />
         </button>
